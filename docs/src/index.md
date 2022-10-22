@@ -16,6 +16,7 @@ Try.unwrap_err
 Try.oktype
 Try.errtype
 Try.map
+Try.astuple
 ```
 
 ## Short-circuit evaluation

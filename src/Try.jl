@@ -35,6 +35,7 @@ struct IsOkError <: InternalPrelude.Exception
 end
 
 function map end
+function astuple end
 
 macro and_return end
 function var"@?" end

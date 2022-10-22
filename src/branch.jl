@@ -161,6 +161,15 @@ macro or(ex, rest...)
     end
 end
 
+function Try.astuple(result)
+    br = branch(result)
+    if br isa Break
+        ()
+    else
+        (valueof(br),)
+    end
+end
+
 ###
 ### Currying
 ###
