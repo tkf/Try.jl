@@ -151,4 +151,19 @@ function test_map()
     @test Try.map(x -> x + 1, nothing) === nothing
 end
 
+function test_double_transpose()
+    @testset for x in [
+        # Result-of-Maybe
+        Ok(Some(1)),
+        Ok(nothing),
+        Err(:error),
+        # Maybe-of-Result
+        Some(Ok(1)),
+        Some(Err(:error)),
+        nothing,
+    ]
+        @test Try.transpose(Try.transpose(x)) == x
+    end
+end
+
 end  # module
