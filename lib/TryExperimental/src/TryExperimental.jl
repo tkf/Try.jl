@@ -79,16 +79,6 @@ end  # module Internal
 const Result = Internal.Result
 const ConcreteResult = Internal.ConcreteResult
 
-# TODO: move this to Maybe.jl
-baremodule Maybe
-function ok end
-function err end
-module Internal
-using ..Maybe
-include("maybe.jl")
-end
-end  # module Maybe
-
 Internal.Try.Internal.@define_docstrings
 
 end  # baremodule TryExperimental
